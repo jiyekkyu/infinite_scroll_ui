@@ -1,6 +1,6 @@
 <template>
 	<section :idx="item"
-			 :class="cssFlag ? 'img-right' : 'img-left'">
+			 :class="scrollImgCss">
 		<div class="img"></div>
 	</section>
 </template>
@@ -8,23 +8,13 @@
 <script>
 export default {
 	name: "Scroll",
-	data() {
-		return {
-			cssFlag: 0,
-		}
-	},
 	props: {
 		item: Number,
 	},
-	methods: {
+	computed: {
 		scrollImgCss() {
-			if ( ( this.item % 2 ) === 0 ) {
-				this.cssFlag = 1;
-			}
+			return this.item % 2 === 0 ? 'img-right' : 'img-left';
 		},
-	},
-	created() {
-		this.scrollImgCss();
 	},
 };
 </script>
