@@ -3,7 +3,7 @@ import axios from 'axios';
 import App from "@/App.vue";
 import router from "@/router";
 import infiScroll from "@/components/infinity-scroll";
-import "@/css/scroll.css";
+import "@/assets/css/scroll.css";
 
 const app = createApp(App).use(router);
 
